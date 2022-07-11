@@ -1,6 +1,6 @@
 #pragma once
 #include "GameIni.h"
-//class Game;
+#include "Coordinate.h"
 
 class Field
 {
@@ -10,10 +10,8 @@ public:
 
 	}
 
-	virtual void printImage() noexcept
-	{
-
-	}
+	virtual void printImage() noexcept = 0;
+	virtual Coordinate getCoord() = 0;
 
 	virtual ~Field()
 	{
@@ -21,6 +19,6 @@ public:
 	}
 
 private:
-	//Game _game;
+	Coordinate _coord;
 };
 

@@ -7,21 +7,6 @@ using namespace std;
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 0, 1, 1, 1, 1} };
 
-void printArray()
-{
-    system("cls");
-    cout.flush() << "*******************" << endl;
-    for (int i = 0; i < 3; ++i)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            cout.flush() << arr[i][j];
-        }
-        cout.flush() << endl;
-    }
-    cout.flush() << "*******************" << endl;
-}
-
 void testInput()
 {
     char ch='0';
@@ -100,6 +85,6 @@ int main()
 {
     system("mode con cols=27 lines=28");
     Game *game = new Game;
-    game->initGame();
+    game->runGame();
     system("pause>NUL");
 }

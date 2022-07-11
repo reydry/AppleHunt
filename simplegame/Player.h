@@ -5,16 +5,16 @@ class Player :
     public Field
 {
 public:
-	Player() : _image(PLAYER_IMAGE)
-	{
 
-	}
+	Player(Coordinate);
 
+	virtual Coordinate getCoord() noexcept;
 	virtual void printImage() noexcept;
-	void moveUp();
-	void moveDown();
-	void moveLeft();
-	void moveRight();
+	Coordinate moveUp();
+	Coordinate moveDown();
+	Coordinate moveLeft();
+	Coordinate moveRight();
+	inline void collectApple() noexcept;
 
 	~Player()
 	{
@@ -22,5 +22,7 @@ public:
 	}
 private:
 	char _image;
+	unsigned int score;
+	Coordinate _coord;
 };
 
