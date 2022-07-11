@@ -1,0 +1,3 @@
+﻿  Game.cpp
+C:\Users\user\source\repos\simplegame\simplegame\Game.cpp(49,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  simplegame.vcxproj -> C:\Users\user\source\repos\simplegame\x64\Debug\simplegame.exe
