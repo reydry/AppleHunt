@@ -2,7 +2,7 @@
 #include "GameIni.h"
 #include <iostream>
 
-Player::Player(Coordinate coord) : _image(PLAYER_IMAGE), score(0), _coord(coord)
+Player::Player(Coordinate coord) : _image(PLAYER_IMAGE), _score(0), _coord(coord)
 {
 
 }
@@ -17,27 +17,48 @@ void Player::printImage() noexcept
 	std::cout.flush() << _image;
 }
 
+void Player::setCoord(Coordinate to)
+{
+	_coord.setCoord(to);
+}
+
 Coordinate Player::moveUp()
 {
-	return _coord;
+	if ((_coord.getY() - 1) < 0 || (_coord.getY() - 1) > 24)
+	{
+		return Coordinate(_coord.getX(), MAX_ROWS - 1);
+	}
+	return Coordinate(_coord.getX(), _coord.getY() - 1);
 }
 
 Coordinate Player::moveDown()
 {
-	return _coord;
+	if ((_coord.getY() + 1) > 24)
+	{
+		return Coordinate(_coord.getX(), 0);
+	}
+	return Coordinate(_coord.getX(), _coord.getY() + 1);
 }
 
 Coordinate Player::moveLeft()
 {
-	return _coord;
+	if ((_coord.getX() - 1) < 0 || (_coord.getX() - 1) > 24)
+	{
+		return Coordinate(MAX_COLS - 1, _coord.getY());
+	}
+	return Coordinate(_coord.getX() - 1, _coord.getY());
 }
 
 Coordinate Player::moveRight()
 {
-	return _coord;
+	if ((_coord.getX() + 1) > 24)
+	{
+		return Coordinate(0, _coord.getY());
+	}
+	return Coordinate(_coord.getX() + 1, _coord.getY());
 }
 
-inline void Player::collectApple() noexcept
+void Player::collectApple() noexcept
 {
-	++score;
+	++_score;
 }

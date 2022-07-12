@@ -10,19 +10,21 @@ public:
 
 	virtual Coordinate getCoord() noexcept;
 	virtual void printImage() noexcept;
+	void setCoord(Coordinate);
 	Coordinate moveUp();
 	Coordinate moveDown();
 	Coordinate moveLeft();
 	Coordinate moveRight();
-	inline void collectApple() noexcept;
+	void collectApple() noexcept;
 
 	~Player()
 	{
 
 	}
+
 private:
 	char _image;
-	unsigned int score;
+	unsigned int _score;
 	Coordinate _coord;
 };
 

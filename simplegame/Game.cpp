@@ -19,7 +19,7 @@ inline void Game::printField() noexcept
     for (int i = 0; i < MAX_COLS; ++i)
     {
         cout.flush() << "|";
-        for (int j = 0; j < MAX_ROWS; j++)
+        for (int j = 0; j < MAX_ROWS; ++j)
         {
             if (_field[i][j] != nullptr)
             {
@@ -61,10 +61,34 @@ void Game::runGame() noexcept
     processGame();
 }
 
+void Game::swapCells(Coordinate coord_left, Coordinate coord_right) noexcept
+{
+    swap(_field[coord_left.getY()][coord_left.getX()],
+        _field[coord_right.getY()][coord_right.getX()]);
+}
+
+Field* Game::getCell(Coordinate coord) noexcept
+{
+    if (_field[coord.getY()][coord.getX()] == nullptr)
+    {
+        return nullptr;
+    }
+    else
+    {
+        return _field[coord.getY()][coord.getX()];
+    }
+}
+
+void Game::clearCell(Coordinate coord) noexcept
+{
+    _field[coord.getY()][coord.getX()]->~Field();
+    _field[coord.getY()][coord.getX()] = nullptr;
+}
+
 inline void Game::processGame() noexcept
 {
     char ch = '0';
-    int idx(0), idy(0);
+
     while (1)
     {
         if (_kbhit())
@@ -73,15 +97,31 @@ inline void Game::processGame() noexcept
         {
             break;
         }
-
         if (int(ch) == 77)
-        { 
-            //_player->
+        {
+            _player_controller->moveRight();
+            printField();
+            //cout.flush() << "move right!" << endl;
         }
         if (int(ch) == 75)
         {
-            
+            _player_controller->moveLeft();
+            printField();
+            //cout.flush() << "move left" << endl;
         }
+        if (int(ch) == 72)
+        {
+            _player_controller->moveUp();
+            printField();
+            //cout.flush() << "move up" << endl;
+        }
+        if (int(ch) == 80)
+        {
+            _player_controller->moveDown();
+            printField();
+            //cout.flush() << "move down" << endl;
+        }
+        
         ch = '0';
     }
 }
@@ -91,16 +131,10 @@ inline void Game::initPlayer() noexcept
     int idy = rand() % 25 + 0;
     int idx = rand() % 25 + 0;
     
-    Player* temp = new Player((Coordinate(idy, idx)));
+    Player* temp = new Player((Coordinate(idx, idy)));
 
-    _player = new PlayerIterruption(this, temp);
+    _player_controller = new PlayerIterruption(this, temp);
     _field[idy][idx] = temp;
-
-    //_player = new Player(Coordinate(idy, idx));
-    // = _player;
-
-    //_playerCoordinate.setCoord(idx, idy);
-    //_field[idy][idx] = new Player(_playerCoordinate);
 }
 
 inline void Game::initApples() noexcept

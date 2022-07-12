@@ -9,6 +9,12 @@ Coordinate::Coordinate(unsigned x, unsigned y) : _x(x), _y(y)
 
 }
 
+void Coordinate::setCoord(Coordinate newCoord)
+{
+	_x = newCoord.getX();
+	_y = newCoord.getY();
+}
+
 unsigned Coordinate::getX() noexcept
 {
 	return _x;

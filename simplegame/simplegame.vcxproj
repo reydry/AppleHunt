@@ -130,6 +130,7 @@
     <ClCompile Include="Apple.cpp" />
     <ClCompile Include="Coordinate.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="FieldViewer.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerIterruption.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Apple.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="FieldViewer.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameIni.h" />
     <ClInclude Include="Player.h" />

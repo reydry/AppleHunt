@@ -1,6 +1,7 @@
 #pragma once
 #include "GameIni.h"
 #include "Coordinate.h"
+#include <iostream>
 
 class Field
 {

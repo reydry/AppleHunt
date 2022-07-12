@@ -9,7 +9,11 @@ public:
 	Game();
 	
 	void runGame() noexcept;
-	
+
+	void swapCells(Coordinate, Coordinate) noexcept;
+	Field* getCell(Coordinate) noexcept;
+	void clearCell(Coordinate coord) noexcept;
+
 	virtual ~Game();
 
 private:
@@ -21,9 +25,8 @@ private:
 	inline void initField() noexcept;
 	inline void initGame() noexcept;
 	
+	
 	Field* _field[MAX_ROWS][MAX_COLS];
-	PlayerIterruption* _player;
-	//Coordinate _playerCoordinate;
-	//Player* _player;
+	PlayerIterruption* _player_controller;
 };
 

@@ -18,5 +18,6 @@ Coordinate Apple::getCoord() noexcept
 
 Apple::~Apple()
 {
-
+	std::cout << "destructor";
+	system("pause");
 }

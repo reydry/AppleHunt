@@ -6,6 +6,7 @@ public:
 	Coordinate();
 	Coordinate(unsigned, unsigned);
 	
+	void setCoord(Coordinate);
 	unsigned getX() noexcept;
 	unsigned getY() noexcept;
 	void setCoord(unsigned, unsigned) noexcept;

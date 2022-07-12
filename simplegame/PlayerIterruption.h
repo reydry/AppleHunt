@@ -1,4 +1,5 @@
 #pragma once
+#include "Coordinate.h"
 
 class Player;
 class Game; 
@@ -6,6 +7,7 @@ class Game;
 class PlayerIterruption
 {
 public:
+
 	PlayerIterruption(Game* game, Player* player) : _game(*game), _player(*player)
 	{
 
@@ -24,5 +26,6 @@ public:
 private:
 	Game& _game;
 	Player& _player;
+	Coordinate to;
+	Coordinate from;
 };
-
