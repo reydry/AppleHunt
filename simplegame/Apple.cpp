@@ -1,14 +1,14 @@
 #include "Apple.h"
 #include <iostream>
 
-Apple::Apple() : _image(APPLE_IMAGE)
+Apple::Apple()
 {
-
+	_image = APPLE_IMAGE;
 }
 
-void Apple::printImage() noexcept
+char Apple::getImage() noexcept
 {
-	std::cout.flush() << _image;
+	return _image;
 }
 
 Coordinate Apple::getCoord() noexcept
@@ -18,6 +18,5 @@ Coordinate Apple::getCoord() noexcept
 
 Apple::~Apple()
 {
-	std::cout << "destructor";
-	system("pause");
+	
 }

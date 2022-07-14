@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    system("mode con cols=27 lines=28");
+    //system("mode con cols=27 lines=28");
    
     Game *game = new Game;
     game->runGame();

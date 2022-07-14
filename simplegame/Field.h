@@ -11,7 +11,7 @@ public:
 
 	}
 
-	virtual void printImage() noexcept = 0;
+	virtual char getImage() noexcept = 0;
 	virtual Coordinate getCoord() = 0;
 
 	virtual ~Field()
@@ -19,7 +19,8 @@ public:
 
 	}
 
-private:
+protected:
+	char _image;
 	Coordinate _coord;
 };
 

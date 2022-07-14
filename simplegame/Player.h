@@ -9,13 +9,14 @@ public:
 	Player(Coordinate);
 
 	virtual Coordinate getCoord() noexcept;
-	virtual void printImage() noexcept;
+	virtual char getImage() noexcept;
 	void setCoord(Coordinate);
 	Coordinate moveUp();
 	Coordinate moveDown();
 	Coordinate moveLeft();
 	Coordinate moveRight();
 	void collectApple() noexcept;
+	unsigned int getScore() noexcept;
 
 	~Player()
 	{
@@ -23,8 +24,7 @@ public:
 	}
 
 private:
-	char _image;
+	
 	unsigned int _score;
-	Coordinate _coord;
 };
 

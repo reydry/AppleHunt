@@ -1,9 +1,3 @@
-﻿  Apple.cpp
-  Field.cpp
-  Game.cpp
-C:\Users\denis\source\repos\AppleHunt\simplegame\Game.cpp(59,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Player.cpp
-  PlayerIterruption.cpp
-  simplegame.cpp
-  Создание кода...
+﻿  Game.cpp
+C:\Users\denis\source\repos\AppleHunt\simplegame\Game.cpp(36,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   simplegame.vcxproj -> C:\Users\denis\source\repos\AppleHunt\x64\Debug\simplegame.exe

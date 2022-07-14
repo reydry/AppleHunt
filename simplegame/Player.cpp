@@ -2,9 +2,10 @@
 #include "GameIni.h"
 #include <iostream>
 
-Player::Player(Coordinate coord) : _image(PLAYER_IMAGE), _score(0), _coord(coord)
+Player::Player(Coordinate coord) : _score(0)
 {
-
+	_coord.setCoord(coord);
+	_image = PLAYER_IMAGE;
 }
 
 Coordinate Player::getCoord() noexcept
@@ -12,9 +13,9 @@ Coordinate Player::getCoord() noexcept
 	return _coord;
 }
 
-void Player::printImage() noexcept
+char Player::getImage() noexcept
 {
-	std::cout.flush() << _image;
+	return _image;
 }
 
 void Player::setCoord(Coordinate to)
@@ -61,4 +62,9 @@ Coordinate Player::moveRight()
 void Player::collectApple() noexcept
 {
 	++_score;
+}
+
+unsigned int Player::getScore() noexcept
+{
+	return +_score;
 }

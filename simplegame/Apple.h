@@ -8,13 +8,10 @@ public:
 
 	Apple();
 
-	virtual void printImage() noexcept;
+	virtual char getImage() noexcept;
 	virtual Coordinate getCoord() noexcept;
 	
 	virtual ~Apple();
 
-private:
-	char _image;
-	Coordinate _coord;
 };
 
